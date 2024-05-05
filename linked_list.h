@@ -2,8 +2,9 @@
 
 class Node
 {
-    int info;
-    int *next;
+    public:
+        int info;
+        int *next;
 };
 
 class LinkedList
@@ -27,6 +28,6 @@ public:
     bool retrieve(int data);
     void traverse();
     void display();
-    
+
     ~LinkedList();
 };
