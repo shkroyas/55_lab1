@@ -40,5 +40,18 @@ void LinkedList::addToHead(int data) {
     size++;
 }
 
+// Method to add a node to the tail of the list
+void LinkedList::addToTail(int data) {
+    Node* newNode = new Node(data);
+    if (TAIL != nullptr) {
+        TAIL->next = newNode;
+    }
+    TAIL = newNode;
+    if (HEAD == nullptr) {
+        HEAD = TAIL;
+    }
+    size++;
+}
+
 
 
