@@ -4,7 +4,8 @@ class Node
 {
     public:
         int info;
-        int *next;
+        Node *next;//changed int to Node to store address
+        Node(int data);// Constructor to initialise a code
 };
 
 class LinkedList
@@ -12,6 +13,9 @@ class LinkedList
 private:
     Node *HEAD;
     Node *TAIL;
+    static const int MAX_SIZE = 10; // Define the maximum size of the linked list
+    int size; // To keep track of the current size of the linked list
+
 
 public:
     LinkedList();
