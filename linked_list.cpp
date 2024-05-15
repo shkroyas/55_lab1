@@ -29,5 +29,16 @@ void LinkedList::display() {
     cout << endl;
 }
 
+// Method to add a node to the head of the list
+void LinkedList::addToHead(int data) {
+    Node* newNode = new Node(data);
+    newNode->next = HEAD;
+    HEAD = newNode;
+    if (TAIL == nullptr) {
+        TAIL = HEAD;
+    }
+    size++;
+}
+
 
 
