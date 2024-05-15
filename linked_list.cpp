@@ -1,5 +1,5 @@
-#include <iostream>      // header file for standard input and output
-#include "linked_list.h" // header file to be included in main.cpp
+#include <iostream>
+#include "linked_list.h"
 
 using namespace std;
 
@@ -18,3 +18,16 @@ LinkedList::~LinkedList() {
 bool LinkedList::isEmpty() {
     return HEAD == nullptr;
 }
+
+// Method to traverse the list and display the data of each node
+void LinkedList::display() {
+    Node* current = HEAD;
+    while (current != nullptr) {
+        cout << current->info << " ";
+        current = current->next;
+    }
+    cout << endl;
+}
+
+
+
