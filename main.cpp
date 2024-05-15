@@ -31,6 +31,12 @@ int main() {
     list.addToTail(45); // Adding a node with data 45 to the Tail of the list
     list.addToTail(17); // Adding a node with data 17 to the Tail of the list
     list.addToTail(85); // Adding a node with data 85 to the Tail of the list
+    list.addToHead(15); // Adding a node with data 15 to the head of the list
+    cout << "List contents: ";
+    list.display(); // Displaying the contents of the list
+    //The linked list will not accept more data because it has already reached the maximum size of 10
+    list.addToHead(11); // Adding a node with data 11 to the head of the list
+
 
     cout << "List contents: ";
     list.display(); // Displaying the contents of the list

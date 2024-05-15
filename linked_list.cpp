@@ -19,6 +19,43 @@ bool LinkedList::isEmpty() {
     return HEAD == nullptr;
 }
 
+// Method to add a node to the head of the list
+void LinkedList::addToHead(int data) {
+    if (!isFull()) {
+        Node* newNode = new Node(data);
+        newNode->next = HEAD;
+        HEAD = newNode;
+        if (TAIL == nullptr) {
+            TAIL = HEAD;
+        }
+        size++;
+    } else {
+        cout << "Sorry, cannot add more elements. The linked list is already full." << endl;
+    }
+}
+
+// Method to add a node to the tail of the list
+void LinkedList::addToTail(int data) {
+    if (!isFull()) {
+        Node* newNode = new Node(data);
+        if (TAIL != nullptr) {
+            TAIL->next = newNode;
+        }
+        TAIL = newNode;
+        if (HEAD == nullptr) {
+            HEAD = TAIL;
+        }
+        size++;
+    } else {
+        cout << "Sorry, cannot add more elements. The linked list is already full." << endl;
+    }
+}
+
+// Method to check if the list is full
+bool LinkedList::isFull() {
+    return size >= MAX_SIZE;
+}
+
 // Method to traverse the list and display the data of each node
 void LinkedList::display() {
     Node* current = HEAD;
@@ -28,30 +65,3 @@ void LinkedList::display() {
     }
     cout << endl;
 }
-
-// Method to add a node to the head of the list
-void LinkedList::addToHead(int data) {
-    Node* newNode = new Node(data);
-    newNode->next = HEAD;
-    HEAD = newNode;
-    if (TAIL == nullptr) {
-        TAIL = HEAD;
-    }
-    size++;
-}
-
-// Method to add a node to the tail of the list
-void LinkedList::addToTail(int data) {
-    Node* newNode = new Node(data);
-    if (TAIL != nullptr) {
-        TAIL->next = newNode;
-    }
-    TAIL = newNode;
-    if (HEAD == nullptr) {
-        HEAD = TAIL;
-    }
-    size++;
-}
-
-
-
