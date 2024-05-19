@@ -76,6 +76,28 @@ void LinkedList::removeFromHead() {
     }
 }
 
+// Method to remove a node from the tail of the list
+void LinkedList::removeFromTail() {
+    if (isEmpty()) {
+        cout << "List is empty. No nodes to remove." << endl;
+        return;
+    }
+
+    if (HEAD == TAIL) { // only one element
+        delete HEAD;
+        HEAD = TAIL = nullptr;
+    } else {
+        Node* current = HEAD;
+        while (current->next != TAIL) {
+            current = current->next;
+        }
+        delete TAIL;
+        TAIL = current;
+        TAIL->next = nullptr;
+    }
+    size--;
+}
+
 // Method to remove a node with specific data from the list
 void LinkedList::remove(int data) {
     if (isEmpty()) {

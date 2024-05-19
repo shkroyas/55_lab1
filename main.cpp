@@ -6,22 +6,37 @@ using namespace std;
 int main() {
     LinkedList list;
 
+
+
     if (list.isEmpty()) {
+        cout << "1" << endl;
         cout << "List is empty" << endl;
     } else {
+        cout << "0" << endl;
         cout << "List is not empty" << endl;
     }
 
 
-    // Adding elements to the list
-    list.addToHead(14);
-    list.addToHead(27);
-    list.addToTail(35);
-    list.addToTail(10);
     cout << "List contents: ";
+    list.display(); // Displaying the contents of the list
+
+    // Adding elements to the list
+    list.addToHead(42);
+    list.addToHead(12);
+    list.addToHead(45);
+    list.addToHead(17);
+    list.addToHead(85);
+
+    cout << "List contents: ";
+    list.display(); // Displaying the contents of the list
+
+    list.removeFromTail();
+    cout << "List contents after removing from tail of the linked list: ";
     list.display();
-    // Traverse the list
-    cout << "Traversing the list:" << endl;
-    list.traverse();
+
+    list.removeFromTail();
+    cout << "List contents after removing from tail of the linked list: ";
+    list.display();
+
     return 0;
 }
