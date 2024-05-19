@@ -20,15 +20,19 @@ int main() {
     list.addToTail(10);
     cout << "List contents: ";
     list.display();
-    // Retrieve the predecessor node with data 35
-    Node* predecessor = nullptr;
-    if (list.retrieve(35, predecessor)) {
-        // Add a new node with data 40 after the predecessor node
-        list.add(40, predecessor);
+    // Search for a node with data 27
+    if (list.search(27)) {
+        cout << "Node with data 27 found." << endl;
     } else {
-        cout << "Predecessor node not found." << endl;
+        cout << "Node with data 27 not found." << endl;
     }
 
+    // Search for a node with data 11
+    if (list.search(11)) {
+        cout << "Node with data 11 found." << endl;
+    } else {
+        cout << "Node with data 11 not found." << endl;
+    }
     // Display the list
     list.display();
 

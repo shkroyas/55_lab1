@@ -142,6 +142,18 @@ void LinkedList::add(int data, Node* predecessorData) {
     size++;
 }
 
+// Method to search for a node with specific data in the list
+bool LinkedList::search(int data) {
+    Node* current = HEAD;
+    while (current != nullptr) {
+        if (current->info == data) {
+            return true;
+        }
+        current = current->next;
+    }
+    return false;
+}
+
 // Method to traverse the list and display the data of each node
 void LinkedList::display() {
     Node* current = HEAD;
