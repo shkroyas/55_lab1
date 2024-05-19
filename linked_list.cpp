@@ -3,20 +3,30 @@
 
 using namespace std;
 
-// Node class definition
+// Node class constructor
 Node::Node(int data) : info(data), next(nullptr) {}
 
-// LinkedList constructor definition
+// LinkedList class constructor
 LinkedList::LinkedList() : HEAD(nullptr), TAIL(nullptr), size(0) {}
 
-// LinkedList destructor definition
+// LinkedList class destructor
 LinkedList::~LinkedList() {
-    // Destructor can be left empty if there's nothing to clean up for now
+    Node* current = HEAD;
+    while (current != nullptr) {
+        Node* nextNode = current->next;
+        delete current;
+        current = nextNode;
+    }
 }
 
 // Method to check if the list is empty
 bool LinkedList::isEmpty() {
     return HEAD == nullptr;
+}
+
+// Method to check if the list is full
+bool LinkedList::isFull() {
+    return size >= MAX_SIZE;
 }
 
 // Method to add a node to the head of the list
@@ -51,9 +61,19 @@ void LinkedList::addToTail(int data) {
     }
 }
 
-// Method to check if the list is full
-bool LinkedList::isFull() {
-    return size >= MAX_SIZE;
+// Method to remove a node from the head of the list
+void LinkedList::removeFromHead() {
+    if (isEmpty()) {
+        cout << "List is empty. No nodes to remove." << endl;
+        return;
+    }
+    Node* temp = HEAD;
+    HEAD = HEAD->next;
+    delete temp;
+    size--;
+    if (HEAD == nullptr) {
+        TAIL = nullptr;
+    }
 }
 
 // Method to traverse the list and display the data of each node
@@ -65,3 +85,6 @@ void LinkedList::display() {
     }
     cout << endl;
 }
+
+
+
