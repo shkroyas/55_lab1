@@ -20,21 +20,8 @@ int main() {
     list.addToTail(10);
     cout << "List contents: ";
     list.display();
-    // Search for a node with data 27
-    if (list.search(27)) {
-        cout << "Node with data 27 found." << endl;
-    } else {
-        cout << "Node with data 27 not found." << endl;
-    }
-
-    // Search for a node with data 11
-    if (list.search(11)) {
-        cout << "Node with data 11 found." << endl;
-    } else {
-        cout << "Node with data 11 not found." << endl;
-    }
-    // Display the list
-    list.display();
-
+    // Traverse the list
+    cout << "Traversing the list:" << endl;
+    list.traverse();
     return 0;
 }

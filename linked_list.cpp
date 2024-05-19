@@ -154,6 +154,16 @@ bool LinkedList::search(int data) {
     return false;
 }
 
+// Method to traverse the list and display the data of each node (same as display)
+void LinkedList::traverse() {
+    Node* current = HEAD;
+    while (current != nullptr) {
+        cout << current->info << " ";
+        current = current->next;
+    }
+    cout << endl;
+}
+
 // Method to traverse the list and display the data of each node
 void LinkedList::display() {
     Node* current = HEAD;
