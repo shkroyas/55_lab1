@@ -120,6 +120,28 @@ bool LinkedList::retrieve(int data, Node*& outputPtr) {
     return false;
 }
 
+void LinkedList::add(int data, Node* predecessorData) {
+    // Find the predecessor node
+    Node* predecessor = nullptr;
+    if (!retrieve(predecessorData->info, predecessor)) {
+        cout << "Predecessor node not found in the list." << endl;
+        return;
+    }
+    
+    // Create and insert the new node after the predecessor
+    Node* newNode = new Node(data);
+    newNode->next = predecessor->next;
+    predecessor->next = newNode;
+
+    // Update TAIL if the new node is inserted at the end
+    if (predecessor == TAIL) {
+        TAIL = newNode;
+    }
+
+    // Increment size
+    size++;
+}
+
 // Method to traverse the list and display the data of each node
 void LinkedList::display() {
     Node* current = HEAD;

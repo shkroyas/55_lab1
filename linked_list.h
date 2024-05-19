@@ -34,7 +34,7 @@ public:
     bool isFull();
 
     // Add a node with data after the given predecessor node
-    void add(Node *pred, int data);
+    void add(int data, Node *pred);
 
     // Add a node with data to the head of the list
     void addToHead(int data);

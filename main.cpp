@@ -20,22 +20,17 @@ int main() {
     list.addToTail(10);
     cout << "List contents: ";
     list.display();
+    // Retrieve the predecessor node with data 35
+    Node* predecessor = nullptr;
+    if (list.retrieve(35, predecessor)) {
+        // Add a new node with data 40 after the predecessor node
+        list.add(40, predecessor);
+    } else {
+        cout << "Predecessor node not found." << endl;
+    }
 
-    //a node pointer pointing to the nullptr node
-    Node* node = nullptr;
-    list.retrieve(1, node);
-    if (node) {
-        cout << "Node with data 1 found: " << node->info << endl;
-    } else {
-        cout << "Node with data 1 not found." << endl;
-    }
-    // the given data 10 is found and returns the position of the data in the list
-    list.retrieve(35, node);
-    if (node) {
-        cout << "Node with data 35 found: " << node->info << endl;
-    } else {
-        cout << "Node with data 35 not found." << endl;
-    }
+    // Display the list
+    list.display();
 
     return 0;
 }
