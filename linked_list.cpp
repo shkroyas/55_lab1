@@ -76,6 +76,36 @@ void LinkedList::removeFromHead() {
     }
 }
 
+// Method to remove a node with specific data from the list
+void LinkedList::remove(int data) {
+    if (isEmpty()) {
+        cout << "List is empty. No nodes to remove." << endl;
+        return;
+    }
+
+    if (HEAD->info == data) {
+        removeFromHead();
+        return;
+    }
+
+    Node* current = HEAD;
+    while (current->next != nullptr) {
+        if (current->next->info == data) {
+            Node* temp = current->next;
+            current->next = current->next->next;
+            if (temp == TAIL) {
+                TAIL = current;
+            }
+            delete temp;
+            size--;
+            return;
+        }
+        current = current->next;
+    }
+
+    cout << "Data not found in the list." << endl;
+}
+
 // Method to traverse the list and display the data of each node
 void LinkedList::display() {
     Node* current = HEAD;

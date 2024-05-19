@@ -33,5 +33,17 @@ int main() {
     cout << "List contents after removing from head of the linked list: ";
     list.display();
 
+    list.remove(12) ;
+    cout << "List contents after removing 12 from the linked list: ";
+    list.display();
+    list.remove(45);
+    cout << "List contents after removing 45 from the linked list: ";
+    list.display();
+    list.remove(85);//85 not available in the list
+    list.remove(42);
+    cout << "List contents after removing 42 from the linked list: ";
+    list.display();
+    list.removeFromHead();//returns an error for empty list
+
     return 0;
 }
