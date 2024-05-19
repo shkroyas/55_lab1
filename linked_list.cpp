@@ -106,6 +106,20 @@ void LinkedList::remove(int data) {
     cout << "Data not found in the list." << endl;
 }
 
+// Method to retrieve a node with specific data from the list
+bool LinkedList::retrieve(int data, Node*& outputPtr) {
+    Node* current = HEAD;
+    while (current != nullptr) {
+        if (current->info == data) {
+            outputPtr = current;
+            return true;
+        }
+        current = current->next;
+    }
+    outputPtr = nullptr;
+    return false;
+}
+
 // Method to traverse the list and display the data of each node
 void LinkedList::display() {
     Node* current = HEAD;

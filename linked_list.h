@@ -51,6 +51,9 @@ public:
     // Remove the tail node
     void removeFromTail();
 
+    // Method to retrieve a node with specific data
+    bool retrieve(int data, Node*& outputNodePointer);
+
     // Search for a node with the given data
     bool search(int data);
 
